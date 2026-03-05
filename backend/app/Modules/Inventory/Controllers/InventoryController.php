@@ -84,7 +84,7 @@ class InventoryController extends Controller
         ]);
 
         try {
-            $inventory = $this->inventoryService->adjustStock($id, $request->integer('delta'), $request->string('reason'));
+            $inventory = $this->inventoryService->adjustStock($id, $request->integer('delta'), (string) $request->string('reason'));
             return response()->json(new InventoryResource($inventory));
         } catch (\RuntimeException $e) {
             return response()->json(['error' => $e->getMessage()], 422);

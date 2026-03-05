@@ -24,15 +24,15 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         ProductCreated::class => [
-            [ProductEventListener::class, 'handleProductCreated'],
+            ProductEventListener::class . '@handleProductCreated',
         ],
 
         ProductUpdated::class => [
-            [ProductEventListener::class, 'handleProductUpdated'],
+            ProductEventListener::class . '@handleProductUpdated',
         ],
 
         ProductDeleted::class => [
-            [ProductEventListener::class, 'handleProductDeleted'],
+            ProductEventListener::class . '@handleProductDeleted',
         ],
 
         InventoryUpdated::class => [
@@ -40,15 +40,15 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         OrderCreated::class => [
-            [OrderEventListener::class, 'handleOrderCreated'],
+            OrderEventListener::class . '@handleOrderCreated',
         ],
 
         OrderUpdated::class => [
-            [OrderEventListener::class, 'handleOrderUpdated'],
+            OrderEventListener::class . '@handleOrderUpdated',
         ],
 
         OrderCancelled::class => [
-            [OrderEventListener::class, 'handleOrderCancelled'],
+            OrderEventListener::class . '@handleOrderCancelled',
         ],
     ];
 
